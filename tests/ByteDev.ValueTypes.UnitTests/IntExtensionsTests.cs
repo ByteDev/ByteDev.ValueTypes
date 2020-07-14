@@ -1,5 +1,4 @@
 ﻿using NUnit.Framework;
-using NUnit.Framework.Internal;
 
 namespace ByteDev.ValueTypes.UnitTests
 {
@@ -52,6 +51,60 @@ namespace ByteDev.ValueTypes.UnitTests
                 var result = sut.MakeNegative();
 
                 Assert.That(result, Is.EqualTo(expected));
+            }
+        }
+
+        [TestFixture]
+        public class IsEven
+        {
+            [TestCase(-4)]
+            [TestCase(-2)]
+            [TestCase(0)]
+            [TestCase(2)]
+            [TestCase(4)]
+            public void WhenIsEven_ThenReturnTrue(int sut)
+            {
+                var result = sut.IsEven();
+
+                Assert.That(result, Is.True);
+            }
+
+            [TestCase(-3)]
+            [TestCase(-1)]
+            [TestCase(1)]
+            [TestCase(3)]
+            public void WhenIsNotEven_ThenReturnFalse(int sut)
+            {
+                var result = sut.IsEven();
+
+                Assert.That(result, Is.False);
+            }
+        }
+
+        [TestFixture]
+        public class IsOdd
+        {
+            [TestCase(-3)]
+            [TestCase(-1)]
+            [TestCase(1)]
+            [TestCase(3)]
+            public void WhenIsOdd_ThenReturnTrue(int sut)
+            {
+                var result = sut.IsOdd();
+
+                Assert.That(result, Is.True);
+            }
+
+            [TestCase(-4)]
+            [TestCase(-2)]
+            [TestCase(0)]
+            [TestCase(2)]
+            [TestCase(4)]
+            public void WhenIsNotOdd_ThenReturnFalse(int sut)
+            {
+                var result = sut.IsOdd();
+
+                Assert.That(result, Is.False);
             }
         }
     }

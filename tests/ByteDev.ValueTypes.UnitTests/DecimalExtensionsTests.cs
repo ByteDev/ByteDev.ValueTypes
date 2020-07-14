@@ -60,5 +60,41 @@ namespace ByteDev.ValueTypes.UnitTests
                 }
             }
         }
+
+        [TestFixture]
+        public class AnyDecimalPlaces
+        {
+            [Test]
+            public void WhenHasNoDecimalPlacesSet_ThenReturnsFalse()
+            {
+                var result = 0M.AnyDecimalPlaces();
+
+                Assert.That(result, Is.False);
+            }
+
+            [Test]
+            public void WhenHasDecimalPlacesSet_ThenReturnTrue()
+            {
+                var result = 0.1M.AnyDecimalPlaces();
+
+                Assert.That(result, Is.True);
+            }
+
+            [Test]
+            public void WhenIncludeTrailingZeros_AndHasTrailingZeros_ThenReturnTrue()
+            {
+                var result = 0.0M.AnyDecimalPlaces(false);
+
+                Assert.That(result, Is.True);
+            }
+
+            [Test]
+            public void WhenIncludeTrailingZeros_AndHasNoTrailingZeros_ThenReturnFalse()
+            {
+                var result = 0M.AnyDecimalPlaces(false);
+
+                Assert.That(result, Is.False);
+            }
+        }
     }
 }

@@ -28,5 +28,25 @@
         {
             return source <= 0 ? source : source * -1;
         }
+
+        /// <summary>
+        /// Determines whether the partiy of an integer is even.
+        /// </summary>
+        /// <param name="source">Integer to check.</param>
+        /// <returns>True if the integer is even; otherwise false.</returns>
+        public static bool IsEven(this int source)
+        {
+            return source.IsMultipleOf(2);
+        }
+
+        /// <summary>
+        /// Determines whether the partiy of an integer is odd.
+        /// </summary>
+        /// <param name="source">Integer to check.</param>
+        /// <returns>True if the integer is odd; otherwise false.</returns>
+        public static bool IsOdd(this int source)
+        {
+            return !IsEven(source);
+        }
     }
 }

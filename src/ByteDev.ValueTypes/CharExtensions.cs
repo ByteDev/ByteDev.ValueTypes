@@ -6,23 +6,17 @@
     public static class CharExtensions
     {
         /// <summary>
-        /// Determines if the char is in the range [a-z].
+        /// Returns a char repeated a certain number of times as a string.
         /// </summary>
-        /// <param name="source">Char to check.</param>
-        /// <returns>True the character is lower case; otherwise false.</returns>
-        public static bool IsLowerCase(this char source)
+        /// <param name="source">Char to repeat.</param>
+        /// <param name="length">Length of the returned string.</param>
+        /// <returns>String of repeated characters.</returns>
+        public static string Repeat(this char source, int length)
         {
-            return source >= 'a' && source <= 'z';
-        }
+            if (length < 1)
+                return string.Empty;
 
-        /// <summary>
-        /// Determines if the char is in the range [A-Z].
-        /// </summary>
-        /// <param name="source">Char to check.</param>
-        /// <returns>True the character is upper case; otherwise false.</returns>
-        public static bool IsUpperCase(this char source)
-        {
-            return source >= 'A' && source <= 'Z';
+            return new string(source, length);
         }
     }
 }

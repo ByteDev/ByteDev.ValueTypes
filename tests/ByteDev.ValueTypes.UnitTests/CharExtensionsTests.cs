@@ -6,56 +6,18 @@ namespace ByteDev.ValueTypes.UnitTests
     public class CharExtensionsTests
     {
         [TestFixture]
-        public class IsLowerCase
+        public class Repeat
         {
-            [Test]
-            public void WhenIsLowerCaseChar_ThenReturnTrue()
+            [TestCase(-1, "")]
+            [TestCase(0, "")]
+            [TestCase(1, "A")]
+            [TestCase(2, "AA")]
+            [TestCase(3, "AAA")]
+            public void WhenCalled_ThenReturnsString(int count, string expected)
             {
-                for (int i = 97; i < 123; i++)
-                {
-                    char sut = (char) i;
+                var result = 'A'.Repeat(count);
 
-                    var result = sut.IsLowerCase();
-
-                    Assert.That(result, Is.True);
-                }
-            }
-
-            [TestCase('`')]
-            [TestCase('A')]
-            [TestCase('{')]
-            public void WhenIsNotLowerCaseChar_ThenReturnFalse(char sut)
-            {
-                var result = sut.IsLowerCase();
-
-                Assert.That(result, Is.False);
-            }
-        }
-
-        [TestFixture]
-        public class IsUpperCase
-        {
-            [Test]
-            public void WhenIsUpperCaseChar_ThenReturnTrue()
-            {
-                for (int i = 65; i < 91; i++)
-                {
-                    char sut = (char) i;
-
-                    var result = sut.IsUpperCase();
-
-                    Assert.That(result, Is.True);
-                }
-            }
-
-            [TestCase('@')]
-            [TestCase('a')]
-            [TestCase('[')]
-            public void WhenIsNotLowerCaseChar_ThenReturnFalse(char sut)
-            {
-                var result = sut.IsUpperCase();
-
-                Assert.That(result, Is.False);
+                Assert.That(result, Is.EqualTo(expected));
             }
         }
     }

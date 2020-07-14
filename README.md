@@ -24,3 +24,24 @@ Full details of the release notes can be viewed on [GitHub](https://github.com/B
 
 ## Usage
 
+To use any extension methods simply reference the `ByteDev.ValueTypes` namespace.
+
+Assembly contains extension methods:
+
+- Char
+    - Repeat
+- Decimal
+  - AnyDecimalPlaces
+  - GetNumberDecimalPlaces
+- Enum
+  - GetDescription
+  - GetDescriptionOrName
+- Guid
+  - IsEmpty
+  - Comb
+- Int
+  - IsEven
+  - IsOdd
+  - IsMultipleOf
+  - MakeNegative
+

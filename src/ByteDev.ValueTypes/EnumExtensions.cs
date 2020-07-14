@@ -10,7 +10,8 @@ namespace ByteDev.ValueTypes
     public static class EnumExtensions
     {
         /// <summary>
-        /// Returns the enum Description attribute text; otherwise returns null if the enum has no Description attribute.
+        /// Returns the enum System.ComponentModel.DescriptionAttribute description; otherwise returns null
+        /// if the enum has no DescriptionAttribute assigned.
         /// </summary>
         /// <param name="source">The enum to get the description from.</param>
         /// <returns>Enum Description attribute text or null if the enum has no Description attribute.</returns>
