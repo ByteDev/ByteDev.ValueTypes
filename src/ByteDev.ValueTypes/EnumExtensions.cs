@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 
@@ -34,6 +35,29 @@ namespace ByteDev.ValueTypes
             var description = GetDescription(source);
 
             return description ?? source.ToString();
+        }
+
+        /// <summary>
+        /// Gets a collection of all the set flags for an enum value. If the enum
+        /// does not have a FlagsAttribute then empty is returned.
+        /// </summary>
+        /// <typeparam name="TEnum">Enum type.</typeparam>
+        /// <param name="source">The enum value to get the flags for.</param>
+        /// <returns>Collection of set flags on the enum value.</returns>
+        public static IEnumerable<TEnum> GetFlags<TEnum>(this Enum source) where TEnum : Enum
+        {
+            if (!HasFlagsAttribute<TEnum>())
+                return Enumerable.Empty<TEnum>();
+
+            return Enum.GetValues(source.GetType())
+                .Cast<Enum>()
+                .Where(source.HasFlag)
+                .Cast<TEnum>();
+        }
+
+        private static bool HasFlagsAttribute<TEnum>() where TEnum : Enum
+        {
+            return typeof(TEnum).IsDefined(typeof(FlagsAttribute), false);
         }
     }
 }

@@ -36,6 +36,7 @@ Assembly contains extension methods:
 - Enum
   - GetDescription
   - GetDescriptionOrName
+  - GetFlags
 - Guid
   - IsEmpty
   - Comb
