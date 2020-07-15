@@ -107,5 +107,37 @@ namespace ByteDev.ValueTypes.UnitTests
                 Assert.That(result, Is.False);
             }
         }
+
+        [TestFixture]
+        public class GetDigits
+        {
+            [TestCase(-2147483648, 11)]
+            [TestCase(-100, 4)]
+            [TestCase(-10, 3)]
+            [TestCase(-1, 2)]
+            [TestCase(0, 1)]
+            [TestCase(1, 1)]
+            [TestCase(10, 2)]
+            [TestCase(100, 3)]
+            [TestCase(2147483647, 10)]
+            public void WhenMinusIsDigit_ThenReturnDigits(int sut, int expected)
+            {
+                var result = sut.GetDigits();
+
+                Assert.That(result, Is.EqualTo(expected));
+            }
+
+            [TestCase(-2147483648, 10)]
+            [TestCase(-100, 3)]
+            [TestCase(-10, 2)]
+            [TestCase(-1, 1)]
+            [TestCase(0, 1)]
+            public void WhenMinusIsNotDigit_ThenReturnDigits(int sut, int expected)
+            {
+                var result = sut.GetDigits(false);
+
+                Assert.That(result, Is.EqualTo(expected));
+            }
+        }
     }
 }

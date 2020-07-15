@@ -28,8 +28,10 @@ To use any extension methods simply reference the `ByteDev.ValueTypes` namespace
 
 Assembly contains extension methods:
 
+- Boolean
+  - ToString(BoolStringFormat)
 - Char
-    - Repeat
+  - Repeat
 - Decimal
   - AnyDecimalPlaces
   - GetNumberDecimalPlaces
@@ -41,8 +43,11 @@ Assembly contains extension methods:
   - IsEmpty
   - Comb
 - Int
+  - GetDigits
   - IsEven
   - IsOdd
   - IsMultipleOf
   - MakeNegative
+- Long
+  - GetDigits
 
