@@ -5,7 +5,7 @@ using NUnit.Framework;
 namespace ByteDev.ValueTypes.UnitTests
 {
     [TestFixture]
-    public class EnumHelperTests
+    public class EnumTypeHelperTests
     {
         public enum ZeroValueEnum
         {
@@ -17,7 +17,7 @@ namespace ByteDev.ValueTypes.UnitTests
             [Test]
             public void WhenEnumHasZeroValues_ThenReturnEmpty()
             {
-                var result = EnumHelper.ToList<ZeroValueEnum>();
+                var result = EnumTypeHelper.ToList<ZeroValueEnum>();
 
                 Assert.That(result.Count, Is.EqualTo(0));
             }
@@ -25,7 +25,7 @@ namespace ByteDev.ValueTypes.UnitTests
             [Test]
             public void WhenEnumHasTwoValues_ThenReturnTwo()
             {
-                var result = EnumHelper.ToList<DummyEnum>();
+                var result = EnumTypeHelper.ToList<DummyEnum>();
 
                 Assert.That(result.Count, Is.EqualTo(2));
                 Assert.That(result.First(), Is.EqualTo(DummyEnum.HasDescription));
@@ -39,7 +39,7 @@ namespace ByteDev.ValueTypes.UnitTests
             [Test]
             public void WhenEnumHasZeroValues_ThenReturnEmpty()
             {
-                var result = EnumHelper.ToDisplayList<ZeroValueEnum>();
+                var result = EnumTypeHelper.ToDisplayList<ZeroValueEnum>();
 
                 Assert.That(result.Count, Is.EqualTo(0));
             }
@@ -47,7 +47,7 @@ namespace ByteDev.ValueTypes.UnitTests
             [Test]
             public void WhenEnumHasOneWithDescriptionAndOneWithout_ThenReturnTwo()
             {
-                var result = EnumHelper.ToDisplayList<DummyEnum>();
+                var result = EnumTypeHelper.ToDisplayList<DummyEnum>();
 
                 Assert.That(result.Count, Is.EqualTo(2));
                 Assert.That(result.First(), Is.EqualTo("description"));

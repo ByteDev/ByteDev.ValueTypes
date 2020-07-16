@@ -7,7 +7,7 @@ namespace ByteDev.ValueTypes
     /// <summary>
     /// Represents a set of helper methods for <see cref="T:System.Enum" />.
     /// </summary>
-    public static class EnumHelper
+    public static class EnumTypeHelper
     {
         /// <summary>
         /// Returns a list of possible enum values for the given enum type.
@@ -30,10 +30,10 @@ namespace ByteDev.ValueTypes
         /// <returns>List of possible enum value's descriptions.</returns>
         public static IList<string> ToDisplayList<TEnum>() where TEnum : Enum
         {
-            var values = from TEnum e in Enum.GetValues(typeof(TEnum))
-                         select (e as Enum).GetDescriptionOrName();
-
-            return values.ToList();
+            return Enum.GetValues(typeof(TEnum))
+                .Cast<TEnum>()
+                .Select(e => e.GetDescriptionOrName())
+                .ToList();
         }
     }
 }

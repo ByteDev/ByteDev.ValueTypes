@@ -51,3 +51,8 @@ Assembly contains extension methods:
 - Long
   - GetDigits
 
+Other types:
+
+- EnumTypeHelper
+  - ToList
+  - ToDisplayList
