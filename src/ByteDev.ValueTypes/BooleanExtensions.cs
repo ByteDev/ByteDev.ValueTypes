@@ -13,7 +13,7 @@ namespace ByteDev.ValueTypes
         /// <param name="source">Boolean to perform the operation on.</param>
         /// <param name="format">Format of the returned string.</param>
         /// <returns>String in the provided format.</returns>
-        public static string ToString(this bool source, BoolStringFormat format)
+        public static string ToString(this bool source, BoolStringFormat format = BoolStringFormat.TitleCase)
         {
             switch (format)
             {

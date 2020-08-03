@@ -24,6 +24,8 @@ Full details of the release notes can be viewed on [GitHub](https://github.com/B
 
 ## Usage
 
+### Extension Methods
+
 To use any extension methods simply reference the `ByteDev.ValueTypes` namespace.
 
 Assembly contains extension methods:
@@ -51,8 +53,41 @@ Assembly contains extension methods:
 - Long
   - GetDigits
 
-Other types:
+---
 
-- EnumTypeHelper
+### EnumTypeHelper
+
+Methods:
   - ToList
   - ToDisplayList
+
+Examples:
+
+```csharp
+// Define a enum
+
+public enum DummyEnum
+{
+    [System.ComponentModel.Description("description")]
+    HasDescription,
+    HasNoDescription,
+}
+```
+
+```csharp
+// ToList
+
+IList<DummyEnum> list = EnumTypeHelper.ToList<DummyEnum>();
+
+// result[0] == DummyEnum.HasDescription
+// result[1] == DummyEnum.HasNoDescription;
+```
+
+```csharp
+// ToDisplayList
+
+IList<string> list = EnumTypeHelper.ToDisplayList<DummyEnum>();
+
+// result[0] == "description"
+// result[1] == "HasNoDescription"
+```

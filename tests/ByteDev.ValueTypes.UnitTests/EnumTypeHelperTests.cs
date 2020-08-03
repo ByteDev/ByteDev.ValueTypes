@@ -19,7 +19,7 @@ namespace ByteDev.ValueTypes.UnitTests
             {
                 var result = EnumTypeHelper.ToList<ZeroValueEnum>();
 
-                Assert.That(result.Count, Is.EqualTo(0));
+                Assert.That(result, Is.Empty);
             }
 
             [Test]
@@ -41,7 +41,7 @@ namespace ByteDev.ValueTypes.UnitTests
             {
                 var result = EnumTypeHelper.ToDisplayList<ZeroValueEnum>();
 
-                Assert.That(result.Count, Is.EqualTo(0));
+                Assert.That(result, Is.Empty);
             }
 
             [Test]
