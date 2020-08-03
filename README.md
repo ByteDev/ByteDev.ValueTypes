@@ -6,6 +6,11 @@
 
 .NET Standard library of value type related functionality.
 
+Value types in .NET: 
+- Primitive types (Boolean, Byte, SByte, Int16, UInt16, Int32, UInt32, Int64, UInt64, Char, Double, Single, Enum)
+- Decimals
+- Structs (e.g. Guid)
+
 ## Installation
 
 ByteDev.ValueTypes has been written as a .NET Standard 2.0 library, so you can consume it from a .NET Core or .NET Framework 4.6.1 (or greater) application.
