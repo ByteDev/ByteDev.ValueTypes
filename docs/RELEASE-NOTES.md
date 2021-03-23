@@ -1,6 +1,6 @@
 # Release Notes
 
-## 1.1.0 - ?
+## 1.1.0 - 23 March 2021
 
 Breaking changes:
 - (None)
@@ -10,6 +10,8 @@ New features:
 - Added `LongExtensions.IsOdd`.
 - Added `LongExtensions.IsMultipleOf`.
 - Added `LongExtensions.MakeNegative`.
+- Added `EnumTypeHelper.ToList` overload.
+- Added `EnumTypeHelper.ToDisplayList` overload.
 
 Bug fixes / internal changes:
 - (None)

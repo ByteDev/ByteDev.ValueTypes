@@ -1,5 +1,4 @@
-﻿using System;
-using System.Linq;
+﻿using System.Linq;
 using ByteDev.Collections;
 using NUnit.Framework;
 
@@ -8,22 +7,6 @@ namespace ByteDev.ValueTypes.UnitTests
     [TestFixture]
     public class EnumExtensionsTests
     {
-        public enum DummyEnum
-        {
-            [System.ComponentModel.Description("description")]
-            HasDescription,
-            HasNoDescription,
-        }
-
-        [Flags]
-        public enum DummyFlagEnum
-        {
-            None = 1,
-            Cached = 2,
-            Current = 4,
-            Obsolete = 8
-        }
-
         [TestFixture]
         public class GetDescription : EnumExtensionsTests
         {
