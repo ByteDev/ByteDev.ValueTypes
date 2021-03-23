@@ -1,37 +1,37 @@
 ﻿namespace ByteDev.ValueTypes
 {
     /// <summary>
-    /// Boolean string format.
+    /// Boolean string format enum.
     /// </summary>
     public enum BoolStringFormat
     {
         /// <summary>
-        /// True or False.
+        /// "True" or "False".
         /// </summary>
         TitleCase = 0,
 
         /// <summary>
-        /// true or false.
+        /// "true" or "false".
         /// </summary>
         LowerCase = 1,
 
         /// <summary>
-        /// TRUE or FALSE.
+        /// "TRUE" or "FALSE".
         /// </summary>
         UpperCase = 2,
 
         /// <summary>
-        /// 1 or 0.
+        /// "1" or "0".
         /// </summary>
         Binary = 3,
 
         /// <summary>
-        /// Yes or No.
+        /// "Yes" or "No".
         /// </summary>
         YesNo = 4,
 
         /// <summary>
-        /// On or Off.
+        /// "On" or "Off".
         /// </summary>
         OnOff = 5
     }

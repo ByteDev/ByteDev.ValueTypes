@@ -19,16 +19,22 @@ namespace ByteDev.ValueTypes
             {
                 case BoolStringFormat.TitleCase:
                     return source.ToString();
+
                 case BoolStringFormat.LowerCase:
                     return source.ToString().ToLowerInvariant();
+
                 case BoolStringFormat.UpperCase:
                     return source.ToString().ToUpperInvariant();
+
                 case BoolStringFormat.Binary:
                     return source ? "1" : "0";
+
                 case BoolStringFormat.YesNo:
                     return source ? "Yes" : "No";
+
                 case BoolStringFormat.OnOff:
                     return source ? "On" : "Off";
+
                 default:
                     throw new InvalidOperationException($"Unexpected value '{format}' for enum '{typeof(BoolStringFormat).FullName}'.");
             }
