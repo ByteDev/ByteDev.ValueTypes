@@ -57,6 +57,10 @@ Assembly contains extension methods:
   - MakeNegative
 - Long
   - GetDigits
+  - IsEven
+  - IsOdd
+  - IsMultipleOf
+  - MakeNegative
 
 ---
 

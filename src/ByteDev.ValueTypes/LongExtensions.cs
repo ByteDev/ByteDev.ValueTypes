@@ -58,5 +58,49 @@
 
             return minusIsDigit ? 20 : 19;
         }
+
+        /// <summary>
+        /// Determines whether the partiy of a long is even.
+        /// </summary>
+        /// <param name="source">Long to check.</param>
+        /// <returns>True if the long is even; otherwise false.</returns>
+        public static bool IsEven(this long source)
+        {
+            return source.IsMultipleOf(2);
+        }
+
+        /// <summary>
+        /// Determines whether the partiy of a long is odd.
+        /// </summary>
+        /// <param name="source">Long to check.</param>
+        /// <returns>True if the long is odd; otherwise false.</returns>
+        public static bool IsOdd(this long source)
+        {
+            return !IsEven(source);
+        }
+
+        /// <summary>
+        /// Determines if a long is a multiple of another long.
+        /// </summary>
+        /// <param name="source">Long to check.</param>
+        /// <param name="value">Value.</param>
+        /// <returns>True if long is a multiple of the value; otherwise returns false.</returns>
+        public static bool IsMultipleOf(this long source, long value)
+        {
+            if (value == 0)
+                return true;
+            
+            return source % value == 0;
+        }
+
+        /// <summary>
+        /// Make a long negative (if it isn't already so).
+        /// </summary>
+        /// <param name="source">Long to make negative.</param>
+        /// <returns>The long as a negative.</returns>
+        public static long MakeNegative(this long source)
+        {
+            return source <= 0 ? source : source * -1;
+        }
     }
 }

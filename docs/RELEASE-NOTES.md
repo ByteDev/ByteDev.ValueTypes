@@ -1,5 +1,19 @@
 # Release Notes
 
+## 1.1.0 - ?
+
+Breaking changes:
+- (None)
+
+New features:
+- Added `LongExtensions.IsEven`.
+- Added `LongExtensions.IsOdd`.
+- Added `LongExtensions.IsMultipleOf`.
+- Added `LongExtensions.MakeNegative`.
+
+Bug fixes / internal changes:
+- (None)
+
 ## 1.0.1 - 03 August 2020
 
 Breaking changes:
