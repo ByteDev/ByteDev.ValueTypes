@@ -89,7 +89,7 @@ public enum DummyEnum
 IList<DummyEnum> list = EnumTypeHelper.ToList<DummyEnum>();
 
 // result[0] == DummyEnum.HasDescription
-// result[1] == DummyEnum.HasNoDescription;
+// result[1] == DummyEnum.HasNoDescription
 ```
 
 ```csharp
