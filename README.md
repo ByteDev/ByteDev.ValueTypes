@@ -55,12 +55,14 @@ Assembly contains extension methods:
   - IsOdd
   - IsMultipleOf
   - MakeNegative
+  - ToStringZeroPadded
 - Long
   - GetDigits
   - IsEven
   - IsOdd
   - IsMultipleOf
   - MakeNegative
+  - ToStringZeroPadded
 
 ---
 

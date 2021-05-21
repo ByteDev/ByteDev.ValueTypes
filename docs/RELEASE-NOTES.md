@@ -1,5 +1,17 @@
 # Release Notes
 
+## 1.2.0 - 21 May 2021
+
+Breaking changes:
+- (None)
+
+New features:
+- Added `IntExtensions.ToStringZeroPadded`.
+- Added `LongExtensions.ToStringZeroPadded`.
+
+Bug fixes / internal changes:
+- (None)
+
 ## 1.1.0 - 23 March 2021
 
 Breaking changes:

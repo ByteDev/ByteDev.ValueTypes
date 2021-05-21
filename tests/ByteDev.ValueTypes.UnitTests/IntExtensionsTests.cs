@@ -139,5 +139,50 @@ namespace ByteDev.ValueTypes.UnitTests
                 Assert.That(result, Is.EqualTo(expected));
             }
         }
+
+        [TestFixture]
+        public class ToStringZeroPadded : IntExtensionsTests
+        {
+            [Test]
+            public void WhenSourceIsNegative_ThenReturnNoPadding()
+            {
+                int sut = -1;
+
+                var result = sut.ToStringZeroPadded(3);
+
+                Assert.That(result, Is.EqualTo(sut.ToString()));
+            }
+
+            [TestCase(1, -1)]
+            [TestCase(1, 0)]
+            public void WhenLengthIsZeroOrNegative_ThenReturnNoPadding(int source, int length)
+            {
+                var result = source.ToStringZeroPadded(length);
+
+                Assert.That(result, Is.EqualTo(source.ToString()));
+            }
+
+            [TestCase(0, 1)]
+            [TestCase(1, 1)]
+            [TestCase(10, 2)]
+            public void WhenLengthEqualsNumberOfDigits_ThenReturnNoPadding(int source, int length)
+            {
+                var result = source.ToStringZeroPadded(length);
+
+                Assert.That(result, Is.EqualTo(source.ToString()));
+            }
+
+            [TestCase(0, 2, "00")]
+            [TestCase(1, 2, "01")]
+            [TestCase(1, 3, "001")]
+            [TestCase(10, 3, "010")]
+            [TestCase(10, 4, "0010")]
+            public void WhenLengthGreaterThanNumberOfDigits_ThenReturnPadded(int source, int length, string expected)
+            {
+                var result = source.ToStringZeroPadded(length);
+
+                Assert.That(result, Is.EqualTo(expected));
+            }
+        }
     }
 }

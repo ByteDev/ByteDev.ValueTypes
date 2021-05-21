@@ -102,5 +102,22 @@
         {
             return source <= 0 ? source : source * -1;
         }
+
+        /// <summary>
+        /// Returns the long as a zero padded string.
+        /// </summary>
+        /// <param name="source">Long to return as a zero padded string.</param>
+        /// <param name="length">The expected length of the string.</param>
+        /// <returns>Zero padded string representation of the long.</returns>
+        public static string ToStringZeroPadded(this long source, int length)
+        {
+            if (source < 0)
+                return source.ToString();
+
+            if (length < 0)
+                length = 0;
+
+            return source.ToString().PadLeft(length, '0');
+        }
     }
 }
