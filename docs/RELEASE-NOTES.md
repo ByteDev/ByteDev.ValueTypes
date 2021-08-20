@@ -1,5 +1,16 @@
 # Release Notes
 
+## 1.3.0 - ?
+
+Breaking changes:
+- (None)
+
+New features:
+- Added `IntExtensions.IsPrime` method.
+
+Bug fixes / internal changes:
+- (None)
+
 ## 1.2.0 - 21 May 2021
 
 Breaking changes:

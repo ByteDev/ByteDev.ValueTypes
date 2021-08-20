@@ -1,4 +1,6 @@
-﻿namespace ByteDev.ValueTypes
+﻿using System;
+
+namespace ByteDev.ValueTypes
 {
     /// <summary>
     /// Extension methods for <see cref="T:System.Int32" />.
@@ -100,6 +102,35 @@
                 length = 0;
 
             return source.ToString().PadLeft(length, '0');
+        }
+        
+        /// <summary>
+        /// Determines if the number is a prime number
+        /// (whole number over 1 that cannot be made by multiplying other whole numbers). 
+        /// </summary>
+        /// <param name="source">Integer to check.</param>
+        /// <returns>True the integer is a prime; otherwise false.</returns>
+        public static bool IsPrime(this int source)
+        {
+            if (source < 2) 
+                return false;
+
+            if (source == 2 || source == 3 || source == 5) 
+                return true;
+
+            if (source % 2 == 0 || source % 3 == 0 || source % 5 == 0) 
+                return false;
+
+            var boundary = (int)Math.Floor(Math.Sqrt(source));
+
+            for (int i = 6; i <= boundary; i += 6)
+            {
+                // All primes other than 2 and 3 leave a remainder of either 1 or 5 when divided by 6
+                if (source % (i + 1) == 0 || source % (i + 5) == 0)
+                    return false;
+            }
+
+            return true;
         }
     }
 }

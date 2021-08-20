@@ -184,5 +184,41 @@ namespace ByteDev.ValueTypes.UnitTests
                 Assert.That(result, Is.EqualTo(expected));
             }
         }
+
+        [TestFixture]
+        public class IsPrime : IntExtensionsTests
+        {
+            [TestCase(-2)]
+            [TestCase(-1)]
+            [TestCase(0)]
+            [TestCase(1)]
+            [TestCase(4)]
+            [TestCase(6)]
+            [TestCase(8)]
+            [TestCase(9)]
+            [TestCase(12)]
+            [TestCase(98)]
+            [TestCase(99)]
+            [TestCase(100)]
+            public void WhenNumberIsNotPrime_ThenReturnFalse(int sut)
+            {
+                var result = sut.IsPrime();
+
+                Assert.That(result, Is.False);
+            }
+
+            [Test]
+            public void WhenNumberIsPrime_ThenReturnTrue()
+            {
+                int[] primesTo100 = {  2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97 };
+
+                foreach (var sut in primesTo100)
+                {
+                    var result = sut.IsPrime();
+
+                    Assert.That(result, Is.True);
+                }
+            }
+        }
     }
 }

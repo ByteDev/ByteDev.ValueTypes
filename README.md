@@ -53,6 +53,7 @@ Assembly contains extension methods:
   - GetDigits
   - IsEven
   - IsOdd
+  - IsPrime
   - IsMultipleOf
   - MakeNegative
   - ToStringZeroPadded
