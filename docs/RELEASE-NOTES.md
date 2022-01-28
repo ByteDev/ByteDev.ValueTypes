@@ -1,12 +1,13 @@
 # Release Notes
 
-## 1.3.0 - ?
+## 1.3.0 - 28 January 2022
 
 Breaking changes:
 - (None)
 
 New features:
 - Added `IntExtensions.IsPrime` method.
+- Added `GuidExtensions.ToString(GuidStringFlags)` method.
 
 Bug fixes / internal changes:
 - (None)

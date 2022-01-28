@@ -49,6 +49,7 @@ Assembly contains extension methods:
 - Guid
   - IsEmpty
   - Comb
+  - ToString(GuidStringFlags)
 - Int
   - GetDigits
   - IsEven
