@@ -46,6 +46,7 @@ Assembly contains extension methods:
   - GetDescription
   - GetDescriptionOrName
   - GetFlags
+  - ToString(EnumStringFormat)
 - Guid
   - IsEmpty
   - Comb
