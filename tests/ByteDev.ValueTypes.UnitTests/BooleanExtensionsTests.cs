@@ -7,7 +7,7 @@ namespace ByteDev.ValueTypes.UnitTests
     public class BooleanExtensionsTests
     {
         [TestFixture]
-        public class ToStringWithType
+        public class ToStringOverride
         {
             [TestCase(BoolStringFormat.TitleCase, "True")]
             [TestCase(BoolStringFormat.LowerCase, "true")]
@@ -15,6 +15,7 @@ namespace ByteDev.ValueTypes.UnitTests
             [TestCase(BoolStringFormat.Binary, "1")]
             [TestCase(BoolStringFormat.YesNo, "Yes")]
             [TestCase(BoolStringFormat.OnOff, "On")]
+            [TestCase(BoolStringFormat.YesNoShort, "Y")]
             public void WhenTypeIsDefined_AndTrue_ThenReturnString(BoolStringFormat format, string expected)
             {
                 var result = true.ToString(format);
@@ -28,6 +29,7 @@ namespace ByteDev.ValueTypes.UnitTests
             [TestCase(BoolStringFormat.Binary, "0")]
             [TestCase(BoolStringFormat.YesNo, "No")]
             [TestCase(BoolStringFormat.OnOff, "Off")]
+            [TestCase(BoolStringFormat.YesNoShort, "N")]
             public void WhenTypeIsDefined_AndFalse_ThenReturnString(BoolStringFormat format, string expected)
             {
                 var result = false.ToString(format);

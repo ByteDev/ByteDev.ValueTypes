@@ -1,5 +1,18 @@
 # Release Notes
 
+## 1.4.0 - 07 March 2022
+
+Breaking changes:
+- (None)
+
+New features:
+- Added `EnumExtensions.ToString(EnumStringFormat)`.
+- Added `BooleanExtensions.ToString(BoolStringFormat.YesNoShort)`.
+
+Bug fixes / internal changes:
+- Fixed `EnumExtensions.GetDescription` to return null if enum value not defined.
+- Fixed `EnumExtensions.GetDescriptionOrName` to return non-defined enum value as string.
+
 ## 1.3.0 - 28 January 2022
 
 Breaking changes:

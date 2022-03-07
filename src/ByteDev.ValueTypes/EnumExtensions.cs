@@ -20,6 +20,9 @@ namespace ByteDev.ValueTypes
         {
             var fieldInfo = source.GetType().GetField(source.ToString());
 
+            if (fieldInfo == null)
+                return null;
+
             var attributes = (DescriptionAttribute[]) fieldInfo.GetCustomAttributes(typeof (DescriptionAttribute), false);
 
             return attributes.Length > 0 ? attributes.First().Description : null;
@@ -53,6 +56,35 @@ namespace ByteDev.ValueTypes
                 .Cast<Enum>()
                 .Where(source.HasFlag)
                 .Cast<TEnum>();
+        }
+        
+        /// <summary>
+        /// Returns a string representation of the enum value in a given format.
+        /// </summary>
+        /// <typeparam name="TEnum">Source enum type.</typeparam>
+        /// <param name="source">Enum to perform the operation on.</param>
+        /// <param name="format">Format of the returned string.</param>
+        /// <returns>String in the provided format.</returns>
+        /// <exception cref="T:System.InvalidOperationException">Unexpected format value.</exception>
+        public static string ToString<TEnum>(this TEnum source, EnumStringFormat format) where TEnum : Enum
+        {
+            switch (format)
+            {
+                case EnumStringFormat.Name:
+                    return source.ToString();
+
+                case EnumStringFormat.Value:
+                    return source.ToString("D");
+
+                case EnumStringFormat.Description:
+                    return GetDescription(source);
+
+                case EnumStringFormat.DescriptionOrName:
+                    return GetDescriptionOrName(source);
+
+                default:
+                    throw new InvalidOperationException($"Unexpected value '{source}' for enum '{typeof(EnumStringFormat).FullName}'.");
+            }
         }
 
         private static bool HasFlagsAttribute<TEnum>() where TEnum : Enum

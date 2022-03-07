@@ -21,4 +21,12 @@ namespace ByteDev.ValueTypes.UnitTests
         Current = 4,
         Obsolete = 8
     }
+
+    public enum TestColor : byte
+    {
+        Red = 1,
+        Green = 2,
+        [System.ComponentModel.Description("Navy Blue")]
+        Blue = 3
+    }
 }

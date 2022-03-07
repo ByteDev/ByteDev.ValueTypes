@@ -1,7 +1,7 @@
 ﻿namespace ByteDev.ValueTypes
 {
     /// <summary>
-    /// Boolean string format enum.
+    /// Boolean string format.
     /// </summary>
     public enum BoolStringFormat
     {
@@ -33,6 +33,11 @@
         /// <summary>
         /// "On" or "Off".
         /// </summary>
-        OnOff = 5
+        OnOff = 5,
+
+        /// <summary>
+        /// "Y" or "N".
+        /// </summary>
+        YesNoShort = 6
     }
 }

@@ -13,6 +13,7 @@ namespace ByteDev.ValueTypes
         /// <param name="source">Boolean to perform the operation on.</param>
         /// <param name="format">Format of the returned string.</param>
         /// <returns>String in the provided format.</returns>
+        /// <exception cref="T:System.InvalidOperationException">Unexpected format value.</exception>
         public static string ToString(this bool source, BoolStringFormat format = BoolStringFormat.TitleCase)
         {
             switch (format)
@@ -34,6 +35,9 @@ namespace ByteDev.ValueTypes
 
                 case BoolStringFormat.OnOff:
                     return source ? "On" : "Off";
+
+                case BoolStringFormat.YesNoShort:
+                    return source ? "Y" : "N";
 
                 default:
                     throw new InvalidOperationException($"Unexpected value '{format}' for enum '{typeof(BoolStringFormat).FullName}'.");
