@@ -7,6 +7,7 @@ Breaking changes:
 
 New features:
 - Added `EnumTypeHelper.HasFlagsAttribute` method.
+- Added `CharExtensions.IsNul` method.
 
 Bug fixes / internal changes:
 - Minor improvements in `EnumTypeHelper` type.

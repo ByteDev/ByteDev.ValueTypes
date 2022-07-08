@@ -39,6 +39,7 @@ Assembly contains extension methods:
   - ToString(BoolStringFormat)
 - Char
   - Repeat
+  - IsNul
 - Decimal
   - AnyDecimalPlaces
   - GetNumberDecimalPlaces
@@ -72,8 +73,9 @@ Assembly contains extension methods:
 ### EnumTypeHelper
 
 Methods:
-  - ToList
-  - ToDisplayList
+- ToList
+- ToDisplayList
+- HasFlagsAttribute
 
 Examples:
 

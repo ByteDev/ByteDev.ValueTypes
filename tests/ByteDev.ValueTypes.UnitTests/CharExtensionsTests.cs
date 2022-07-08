@@ -20,5 +20,25 @@ namespace ByteDev.ValueTypes.UnitTests
                 Assert.That(result, Is.EqualTo(expected));
             }
         }
+
+        [TestFixture]
+        public class IsNul
+        {
+            [Test]
+            public void WhenCharIsNul_ThenReturnTrue()
+            {
+                var result = '\0'.IsNul();
+
+                Assert.That(result, Is.True);
+            }
+
+            [Test]
+            public void WhenCharIsNotNull_ThenReturnFalse()
+            {
+                var result = 'A'.IsNul();
+
+                Assert.That(result, Is.False);
+            }
+        }
     }
 }

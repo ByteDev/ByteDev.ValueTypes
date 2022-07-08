@@ -18,5 +18,15 @@
 
             return new string(source, length);
         }
+
+        /// <summary>
+        /// Determines if the char is the NUL (null) character.
+        /// </summary>
+        /// <param name="source">Char to check.</param>
+        /// <returns>True if the char is NUL (null); otherwise false.</returns>
+        public static bool IsNul(this char source)
+        {
+            return source == '\0';
+        }
     }
 }
