@@ -1,5 +1,16 @@
 # Release Notes
 
+## 1.5.0 - 08 July 2022
+
+Breaking changes:
+- (None)
+
+New features:
+- Added `EnumTypeHelper.HasFlagsAttribute` method.
+
+Bug fixes / internal changes:
+- Minor improvements in `EnumTypeHelper` type.
+
 ## 1.4.0 - 07 March 2022
 
 Breaking changes:

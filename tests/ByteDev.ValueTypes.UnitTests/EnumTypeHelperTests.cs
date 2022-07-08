@@ -9,7 +9,7 @@ namespace ByteDev.ValueTypes.UnitTests
     public class EnumTypeHelperTests
     {
         [TestFixture]
-        public class ToList : EnumTypeHelperTests
+        public class ToList
         {
             [Test]
             public void WhenEnumHasZeroValues_ThenReturnEmpty()
@@ -31,7 +31,7 @@ namespace ByteDev.ValueTypes.UnitTests
         }
 
         [TestFixture]
-        public class ToList_Type : EnumTypeHelperTests
+        public class ToList_Type
         {
             [Test]
             public void WhenTypeIsNotEnum_ThenThrowException()
@@ -59,7 +59,7 @@ namespace ByteDev.ValueTypes.UnitTests
         }
 
         [TestFixture]
-        public class ToDisplayList : EnumTypeHelperTests
+        public class ToDisplayList
         {
             [Test]
             public void WhenEnumHasZeroValues_ThenReturnEmpty()
@@ -81,7 +81,7 @@ namespace ByteDev.ValueTypes.UnitTests
         }
 
         [TestFixture]
-        public class ToDisplayList_Type : EnumTypeHelperTests
+        public class ToDisplayList_Type
         {
             [Test]
             public void WhenTypeIsNotEnum_ThenThrowException()
@@ -105,6 +105,36 @@ namespace ByteDev.ValueTypes.UnitTests
                 Assert.That(result.Count, Is.EqualTo(2));
                 Assert.That(result.First(), Is.EqualTo("description"));
                 Assert.That(result.Second(), Is.EqualTo("HasNoDescription"));
+            }
+        }
+
+        [TestFixture]
+        public class HasFlagsAttribute
+        {
+            [Test]
+            public void WhenEnumHasNoFlagAttribute_ThenReturnFalse()
+            {
+                var result = EnumTypeHelper.HasFlagsAttribute<ZeroValueEnum>();
+
+                Assert.That(result, Is.False);
+            }
+
+            [Test]
+            public void WhenEnumHasFlagAttribute_ThenReturnTrue()
+            {
+                var result = EnumTypeHelper.HasFlagsAttribute<DummyFlagEnum>();
+
+                Assert.That(result, Is.True);
+            }
+        }
+
+        [TestFixture]
+        public class HasFlagsAttribute_Type
+        {
+            [Test]
+            public void WhenTypeIsNotEnum_ThenReturnFalse()
+            {
+                Assert.Throws<ArgumentException>(() => EnumTypeHelper.HasFlagsAttribute(typeof(object)));
             }
         }
     }

@@ -49,7 +49,7 @@ namespace ByteDev.ValueTypes
         /// <returns>Collection of set flags on the enum value.</returns>
         public static IEnumerable<TEnum> GetFlags<TEnum>(this Enum source) where TEnum : Enum
         {
-            if (!HasFlagsAttribute<TEnum>())
+            if (!EnumTypeHelper.HasFlagsAttribute<TEnum>())
                 return Enumerable.Empty<TEnum>();
 
             return Enum.GetValues(source.GetType())
@@ -85,11 +85,6 @@ namespace ByteDev.ValueTypes
                 default:
                     throw new InvalidOperationException($"Unexpected value '{source}' for enum '{typeof(EnumStringFormat).FullName}'.");
             }
-        }
-
-        private static bool HasFlagsAttribute<TEnum>() where TEnum : Enum
-        {
-            return typeof(TEnum).IsDefined(typeof(FlagsAttribute), false);
         }
     }
 }
