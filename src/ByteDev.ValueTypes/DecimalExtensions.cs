@@ -1,4 +1,5 @@
-﻿using System.Globalization;
+﻿using System;
+using System.Globalization;
 
 namespace ByteDev.ValueTypes
 {
@@ -35,6 +36,16 @@ namespace ByteDev.ValueTypes
                 return parts[1].TrimEnd('0').Length;
 
             return parts[1].Length;
+        }
+
+        /// <summary>
+        /// Remove any trailing zeros from the decimal value.
+        /// </summary>
+        /// <param name="source">The decimal to perform the operation on.</param>
+        /// <returns>The decimal value without any trailing zeros.</returns>
+        public static decimal RemoveTrailingZeros(this decimal source)
+        {
+            return source / 1.000000000000000000000000000000000m;
         }
     }
 }

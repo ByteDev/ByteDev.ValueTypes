@@ -43,6 +43,7 @@ Assembly contains extension methods:
 - Decimal
   - AnyDecimalPlaces
   - GetNumberDecimalPlaces
+  - RemoveTrailingZeros
 - Enum
   - GetDescription
   - GetDescriptionOrName

@@ -96,5 +96,38 @@ namespace ByteDev.ValueTypes.UnitTests
                 Assert.That(result, Is.False);
             }
         }
+
+        [TestFixture]
+        public class RemoveTrailingZeros : DecimalExtensionsTests
+        {
+            [TestCase(0.0, 0)]
+            [TestCase(1.0, 1)]
+            [TestCase(0.10, 0.1)]
+            [TestCase(0.110, 0.11)]
+            [TestCase(1.110, 1.11)]
+            [TestCase(1.111111111111111111111111111110, 1.11111111111111111111111111111)]
+            [TestCase(9.999999999999999999999999999990, 9.99999999999999999999999999999)]
+            public void WhenHasTrailingZeros_ThenRemoveZeros(decimal sut, decimal expected)
+            {
+                var result = sut.RemoveTrailingZeros();
+
+                Assert.That(result, Is.EqualTo(expected));
+            }
+
+            [TestCase(0)]
+            [TestCase(1)]
+            [TestCase(0.1)]
+            [TestCase(0.11)]
+            [TestCase(1.1)]
+            [TestCase(1.11)]
+            [TestCase(1.11111111111111111111111111111)]
+            [TestCase(9.99999999999999999999999999999)]
+            public void WhenHasNoTrailingZeros_ThenReturnEqual(decimal sut)
+            {
+                var result = sut.RemoveTrailingZeros();
+
+                Assert.That(result, Is.EqualTo(sut));
+            }
+        }
     }
 }
