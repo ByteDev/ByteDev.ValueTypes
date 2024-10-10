@@ -1,6 +1,6 @@
 # Release Notes
 
-## 1.5.0 - ?
+## 1.5.0 - 10 October 2024
 
 Breaking changes:
 - (None)
