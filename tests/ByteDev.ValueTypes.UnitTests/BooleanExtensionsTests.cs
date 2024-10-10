@@ -16,6 +16,7 @@ namespace ByteDev.ValueTypes.UnitTests
             [TestCase(BoolStringFormat.YesNo, "Yes")]
             [TestCase(BoolStringFormat.OnOff, "On")]
             [TestCase(BoolStringFormat.YesNoShort, "Y")]
+            [TestCase(BoolStringFormat.EnableDisable, "Enable")]
             public void WhenTypeIsDefined_AndTrue_ThenReturnString(BoolStringFormat format, string expected)
             {
                 var result = true.ToString(format);
@@ -30,6 +31,7 @@ namespace ByteDev.ValueTypes.UnitTests
             [TestCase(BoolStringFormat.YesNo, "No")]
             [TestCase(BoolStringFormat.OnOff, "Off")]
             [TestCase(BoolStringFormat.YesNoShort, "N")]
+            [TestCase(BoolStringFormat.EnableDisable, "Disable")]
             public void WhenTypeIsDefined_AndFalse_ThenReturnString(BoolStringFormat format, string expected)
             {
                 var result = false.ToString(format);

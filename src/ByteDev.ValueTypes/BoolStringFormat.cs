@@ -38,6 +38,11 @@
         /// <summary>
         /// "Y" or "N".
         /// </summary>
-        YesNoShort = 6
+        YesNoShort = 6,
+
+        /// <summary>
+        /// "Enable" or "Disable"
+        /// </summary>
+        EnableDisable = 7
     }
 }

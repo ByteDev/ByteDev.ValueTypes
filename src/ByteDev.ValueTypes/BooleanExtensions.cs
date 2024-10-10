@@ -39,6 +39,9 @@ namespace ByteDev.ValueTypes
                 case BoolStringFormat.YesNoShort:
                     return source ? "Y" : "N";
 
+                case BoolStringFormat.EnableDisable:
+                    return source ? "Enable" : "Disable";
+
                 default:
                     throw new InvalidOperationException($"Unexpected value '{format}' for enum '{typeof(BoolStringFormat).FullName}'.");
             }

@@ -1,17 +1,6 @@
 # Release Notes
 
-## 1.6.0 - ?
-
-Breaking changes:
-- (None)
-
-New features:
-- Added `DecimalExtensions.RemoveTrailingZeros` method.
-
-Bug fixes / internal changes:
-- (None)
-
-## 1.5.0 - 08 July 2022
+## 1.5.0 - ?
 
 Breaking changes:
 - (None)
@@ -19,6 +8,8 @@ Breaking changes:
 New features:
 - Added `EnumTypeHelper.HasFlagsAttribute` method.
 - Added `CharExtensions.IsNul` method.
+- Added `DecimalExtensions.RemoveTrailingZeros` method.
+- Added `BoolStringFormat.EnableDisable` value.
 
 Bug fixes / internal changes:
 - Minor improvements in `EnumTypeHelper` type.
