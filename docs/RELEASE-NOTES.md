@@ -1,5 +1,18 @@
 # Release Notes
 
+## 1.6.0 - ?
+
+Breaking changes:
+- (None)
+
+New features:
+- Add `CharExtensions.IsAscii` method.
+- Add `CharExtensions.IsAsciiPrintable` method.
+- Add `CharExtensions.IsAsciiControl` method.
+
+Bug fixes / internal changes:
+- (None)
+
 ## 1.5.0 - 10 October 2024
 
 Breaking changes:
